@@ -1,0 +1,14 @@
+08/29
+- Tomato Recognition and Classification ML programs functioning properly as in previous demo
+
+09/05
+- Slight modifications to code and dataset in attemps to improbe ML performance
+
+09/12
+- Gain familiarity with Realsense D435 camera operation and functionality
+
+09/19
+- Begin ML and Database subsystems integration
+- Develop code for volume yield estimation
+
+09/26
