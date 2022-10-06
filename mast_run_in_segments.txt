@@ -1,0 +1,20 @@
+import RPi.GPIO as GPIO
+import time
+from time import sleep
+
+GPIO.setup(15,GPIO.OUT) #enable
+GPIO.setup(13,GPIO.OUT) #direction
+GPIO.setup(11,GPIO.OUT) #step
+
+GPIO.output(15.LOW) #enable on
+delay = 0.0000000001 #delay for created pwm
+GPIO.output(13,GPIO.HIGH) #direction chosen
+
+print("Engage Hyper Drive") #start
+tic = int(time.perf_counter())#timer start
+tac = 0 #total time initialized
+while tac < 240: #loop to run for 240 seconds
+	GPIO.output(11,GPIO.HIGH) #step off
+	sleep(delay)
+	GPIO.output(11,GPIO.LOW)#step on
+	sleep(delay)

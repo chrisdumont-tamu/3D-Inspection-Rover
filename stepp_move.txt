@@ -1,0 +1,40 @@
+import RPi.GPIO as GPIO
+import time
+from time import sleep
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setwarnings(False)
+
+GPIO.setup(15,GPIO.OUT) # enable, was 22
+GPIO.setup(13,GPIO.OUT) # direction, was 21
+GPIO.setup(11,GPIO.OUT) # step, was 20
+
+step_count = 200000  # number of step to run  change this to change were it stops
+delay = 0.000001
+GPIO.output(15, GPIO.LOW)
+# drive motor counter clockwise number of steps set by step count
+GPIO.output(13, GPIO.LOW)
+print (" Drive CCW ", step_count ,"steps")
+for x in range(step_count):
+    GPIO.output(11, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(11, GPIO.LOW)
+    sleep(delay)
+    
+# stop motor for 5 seconds    
+print (" Stop")
+sleep(5)
+GPIO.output(15, GPIO.HIGH)
+# drive motor clockwise number of steps set by step count
+print (" Drive CW ", step_count ,"steps")
+GPIO.output(13, GPIO.HIGH)
+for x in range(step_count):
+    GPIO.output(11, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(11, GPIO.LOW)
+    sleep(delay)
+
+# end of program
+print (" End program")
+
+GPIO.cleanup()
