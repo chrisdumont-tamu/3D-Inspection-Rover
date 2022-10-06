@@ -1,0 +1,6 @@
+id,confidence,classification,xmin,ymin,xmax,ymax,volume
+t1,98.79,Red,323,311,439,466
+t1,95.19,Turning,28,347,274,562
+t2,96.64,Red,25,52,328,283
+t3,98.38,Old,342,51,560,288
+t4,99.48,Red,281,283,502,517
