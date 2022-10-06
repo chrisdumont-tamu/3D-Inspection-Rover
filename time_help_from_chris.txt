@@ -1,0 +1,8 @@
+import time
+total_time=240
+x=time.time()
+y-time.time()
+while(total_time !=0)
+	while(run_time<60)
+	#runs for 60
+	total_time=total-60
