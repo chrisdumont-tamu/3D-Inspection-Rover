@@ -31,3 +31,12 @@ Update 5 10/06/2022:
 2. A distance sensor broke - need to get this replaced
 3. Distance sensor cricuit resoldered and works across all 3 circuits
 4. Helped Dalton and Felipe begin integrating code
+
+Update 6 10/13/2022:
+1.Tested and Validated mast and Gimble circuit
+2. Validated all circuits work at once when connected to rover
+3. Still need replacement distance sensor
+
+Update 7 10/20/2022:
+1. 3d modeled mount for proto boards. Hoping to get them in this week
+
