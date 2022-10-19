@@ -110,8 +110,7 @@ def shawty():
         #print(tac)
     print(tac)
     print("That's no moon...")
-    confid_rating = 75 #desired confidence min
-    random_conf = 0 # initializing random  confidence variable
+    #confid_rating = 75, desired confidence min
     i = 0 #direction identifier
     j = 0 #counter for loop iterations
     #while loop for running through directions
@@ -122,14 +121,12 @@ def shawty():
         #test default image
         ###take photo and process photo here
         
-
+        Num_of_Tomatoes = Felipe_Main_Camera()
 
         ###
+        
         i = 5 #dir ID
-        f = open('conf_nums.txt')#open file
-        random_conf = int(f.readline())#random number testing confidence
-        if random_conf > confid_rating:
-            f.close()
+        if Num_of_Tomatoes !=0: #random_conf > confid_rating:
             break
         #setup base position
         #setServoAngle(pan_s,76)
@@ -142,9 +139,7 @@ def shawty():
 
         ###
         i = 1
-        random_conf = int(f.readline())#random number testing confidence
-        if random_conf > confid_rating:
-            f.close()
+        if Num_of_Tomatoes !=0: #random_conf > confid_rating:
             break
         setServoAngle(pan_s,76)#recenter
         setServoAngle(tilt_s,75)#tilt down
@@ -154,9 +149,7 @@ def shawty():
 
         ###
         i = 2
-        random_conf = int(f.readline())#random number testing confidence
-        if random_conf > confid_rating:
-            f.close()
+        if Num_of_Tomatoes !=0: #random_conf > confid_rating:
             break
         setServoAngle(tilt_s,90)#Recenter
         setServoAngle(pan_s,61)#pan left
@@ -166,9 +159,7 @@ def shawty():
 
         ###
         i = 3
-        random_conf = int(f.readline())#random number testing confidence
-        if random_conf > confid_rating:
-            f.close()
+        if Num_of_Tomatoes !=0: #random_conf > confid_rating:
             break
         setServoAngle(pan_s,76)#recenter
         setServoAngle(tilt_s,105)#tilt up
@@ -178,26 +169,24 @@ def shawty():
 
         ###
         i = 4
-        random_conf = int(f.readline())#random number testing confidence
-        if random_conf > confid_rating:
-            f.close()
+        if Num_of_Tomatoes !=0: #random_conf > confid_rating:
             break
         #Recenter
         j += 1
         #break
     if j ==1 :
-        print("Confidence is at maximum: ", confid_rating)
+        print("No tomatoes: ", Num_of_Tomatoes)
     elif i == 1:
-        print("Pan right increased confidence with a value of: ", random_conf)
+        print(f"Pan right has {Num_of_Tomatoes} tomatoes in view")
     elif i == 2:
-        print("Tilt down increased confidence with a value of: ", random_conf)
+        print(f"Tilt down has {Num_of_Tomatoes} tomatoes in view")
     elif i == 3:
-        print("Pan left increased confidecne with a value of: ", random_conf)
+        print(f"Pan left has {Num_of_Tomatoes} tomatoes in view")
     elif i == 4:
-        print("Tilt up increased confidence with a value of: ", random_conf)
+        print(f"Tilt up has {Num_of_Tomatoes} tomatoes in view")
         #print(toc-tic)
     elif i == 5:
-        print("Default image has confidence of: ", random_conf)
+        print(f"Default image has {Num_of_Tomatoes} tomatoes in view")
         #print(toc-tic)
     else:
         print("Max confidence reached")
