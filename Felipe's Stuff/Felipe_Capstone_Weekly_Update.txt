@@ -1,14 +1,32 @@
-08/29
+08/29 *
 - Tomato Recognition and Classification ML programs functioning properly as in previous demo
 
 09/05
-- Slight modifications to code and dataset in attemps to improbe ML performance
+- Modifications to code and dataset for ML training in attemps to improbe ML performance
+- Acquire RealSense D435 camera for yield estimation functionality
 
-09/12
+09/12 *
 - Gain familiarity with Realsense D435 camera operation and functionality
+- Determine method of volume estimation (oval or circular estimation of tomato)
 
 09/19
 - Begin ML and Database subsystems integration
-- Develop code for volume yield estimation
+- Gain familiarity with Realsense D435 camera operation and functionality
+- Ivestigate 3D volume estimation method using point cloud and mesh construction
 
-09/26
+09/26 *
+- Code to convert tensorflow models for tomato classification into tensorflow lite models
+
+10/03
+- Main integration functionality between ML and database accomplished
+- Attempts to install RealSense API on Raspberry Pi unsuccessful
+- Began ML and camera system integration
+
+10/10 *
+- RealSense API on Raspberry Pi accomplished
+- Ongoing ML and camera subsystem integration
+
+10/17
+- Ongoing ML and camera subsystem integration
+- Attempts to install TensorFlow on Raspberry Pi
+- yolov4 model successfully converted to tensorflow lite model
