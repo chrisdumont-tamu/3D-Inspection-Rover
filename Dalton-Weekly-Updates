@@ -17,10 +17,10 @@ Integration with navigation subsystem is complete. Wokring on soldering circuits
 Image capturing and saving with the ML subsystem has begun
 
 10/06/22
-Circuits fully soldered and ready for testing. Worked on getting Pi to have proper libraries
+Circuits are soldered and work together as intended. Intregration with nav system is complete/99% complete
 
 10/13/22
-Validated boards. Troubleshoot Pi wifi downloading
+Validated boards. Troubleshoot Pi wifi downloading to get required libraries.
 
 10/20/22
 More integration with ML subsystem. Optimized code for smoother operation and integration
