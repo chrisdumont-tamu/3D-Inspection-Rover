@@ -121,12 +121,12 @@ def shawty():
         #test default image
         ###take photo and process photo here
         
-        Num_of_Tomatoes = Felipe_Main_Camera()
+        Tomatoes_in_Image = Felipe_Main_Camera()
 
         ###
         
         i = 5 #dir ID
-        if Num_of_Tomatoes !=0: #random_conf > confid_rating:
+        if Tomatoes_in_Image !=0: #random_conf > confid_rating:
             break
         #setup base position
         #setServoAngle(pan_s,76)
@@ -139,7 +139,7 @@ def shawty():
 
         ###
         i = 1
-        if Num_of_Tomatoes !=0: #random_conf > confid_rating:
+        if Tomatoes_in_Image !=0: #random_conf > confid_rating:
             break
         setServoAngle(pan_s,76)#recenter
         setServoAngle(tilt_s,75)#tilt down
@@ -149,7 +149,7 @@ def shawty():
 
         ###
         i = 2
-        if Num_of_Tomatoes !=0: #random_conf > confid_rating:
+        if Tomatoes_in_Image !=0: #random_conf > confid_rating:
             break
         setServoAngle(tilt_s,90)#Recenter
         setServoAngle(pan_s,61)#pan left
@@ -159,7 +159,7 @@ def shawty():
 
         ###
         i = 3
-        if Num_of_Tomatoes !=0: #random_conf > confid_rating:
+        if Tomatoes_in_Image !=0: #random_conf > confid_rating:
             break
         setServoAngle(pan_s,76)#recenter
         setServoAngle(tilt_s,105)#tilt up
@@ -169,7 +169,7 @@ def shawty():
 
         ###
         i = 4
-        if Num_of_Tomatoes !=0: #random_conf > confid_rating:
+        if Tomatoes_in_Image !=0: #random_conf > confid_rating:
             break
         #Recenter
         j += 1
