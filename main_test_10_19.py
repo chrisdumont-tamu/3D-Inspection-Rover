@@ -18,7 +18,7 @@
 #Echo=18
 #SENSOR 2
 #Trigger=36
-#Echo=32
+#Echo=31
 #SENSOR 1
 #Trigger=8
 #Echo=38
@@ -59,7 +59,7 @@ Trigger2=36
 Trigger3=16
   # echo pins
 Echo1 = 38
-Echo2=32
+Echo2=31
 Echo3=18
 #^^^^^^^^ Need to change GPIO 12/32 to different pins
 v=10
