@@ -2,3 +2,5 @@
 Dr. Jang is our professor
 Dr. Nowka is our sponser
 Eric Robles is our TA
+
+Look in team updates folder for each of our weekly updates
