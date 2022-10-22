@@ -64,9 +64,9 @@ Echo3=18
 #^^^^^^^^ Need to change GPIO 12/32 to different pins
 v=10
 avoid_distance=100
-
+psudr = 1
 #Servo Controls
-pan_s = 12 #GPIO for pan servo
+pan_s = 35 #GPIO for pan servo
 tilt_s = 32 #GPIO for tilt servo
 f_pwm = 50 #50Hz signal
 
