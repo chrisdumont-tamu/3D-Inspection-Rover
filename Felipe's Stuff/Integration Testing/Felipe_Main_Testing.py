@@ -106,45 +106,23 @@ def Felipe_Main_Camera():
 def Get_Image_Data():
     # # This function takes an image from the RealSense Camera, applies the localization model, and returns a tomato collection, the color image, and depth data
     # # Get frame from camera
-    # frame = pipeline.wait_for_frames()
-    # color_frame = frame.get_color_frame()
-    # depth_frame = frame.get_depth_frame()
+    frame = pipeline.wait_for_frames()
+    color_frame = frame.get_color_frame()
+    depth_frame = frame.get_depth_frame()
     
     # # Convert color frame into color image
     # # Image will come in RGB format, as uint8, of shape (640, 480, 3)
-    # color_image = np.asanyarray(color_frame.get_data())
+    color_image = np.asanyarray(color_frame.get_data())
     
     # # Extract localization data from color image
-    # # Tomatoes_Container = tlt.process_extract_tomatoes(INPUT_SIZE, MODEL_PATH_YOLO, IOU_THRESHOLD, SCORES_THRESHOLD, img=color_image, load_image=False)
-    # img, Tomatoes_Container = tlt.process_extract_tomatoes(INPUT_SIZE, MODEL_PATH_YOLO, IOU_THRESHOLD, SCORES_THRESHOLD, load_image=False)
+    img, Tomatoes_Container = tlt.process_extract_tomatoes(INPUT_SIZE, MODEL_PATH_YOLO, IOU_THRESHOLD, SCORES_THRESHOLD, load_image=False)
     
     # # Set timestamp of when tomato collection was taken
-    # Tomatoes_Container.set_time_and_date()
+    Tomatoes_Container.set_time_and_date()
     
     # return Tomatoes_Container, color_image, depth_frame
+     return Tomatoes_Container, color_image, depth_frame
     
-    ################################################################## Testing
-    # frame = pipeline.wait_for_frames()
-    # color_frame = frame.get_color_frame()
-    # depth_frame = frame.get_depth_frame()
-    
-    # Convert color frame into color image
-    # Image will come in RGB format, as uint8, of shape (480, 640, 3)
-    # color_image = np.asanyarray(color_frame.get_data())
-    
-    # Extract localization data from color image
-    # Tomatoes_Container = tlt.process_extract_tomatoes(INPUT_SIZE, MODEL_PATH_YOLO, IOU_THRESHOLD, SCORES_THRESHOLD, img=color_image, load_image=False)
-    img, Tomatoes_Container = tlt.process_extract_tomatoes(INPUT_SIZE, MODEL_PATH_YOLO, IOU_THRESHOLD, SCORES_THRESHOLD, load_image=True, image_path=image_path)
-    color_image = img
-    depth_frame = img
-    
-    # Set timestamp of when tomato collection was taken
-    Tomatoes_Container.set_time_date()
-    
-    return Tomatoes_Container, color_image, depth_frame
-
-
-
 def Get_Volume_Yields(Tomato_Collection, depth_frame):
     return None
 
