@@ -1,0 +1,83 @@
+import RPi.GPIO as GPIO
+import time
+import random 
+
+pan_s = 12 #GPIO for pan servo
+tilt_s = 32 #GPIO for tilt servo
+f_pwm = 50 #50Hz signal
+GPIO.setwarnings(False)
+pwm = 0
+#start functions
+def setup():#setup function
+    global pwm #pwm global
+    GPIO.setmode(GPIO.BOARD) #board setup
+    GPIO.setup(pan_s, GPIO.OUT)#setup pan output pin
+    GPIO.setup(tilt_s, GPIO.OUT) #setup tilt output pin
+    
+
+def setServoAngle(servo, angle):
+  pwm = GPIO.PWM(servo, f_pwm)#setup output frequency
+  pwm.start(8)
+  dutyCycle = angle / 18. + 2.
+  pwm.ChangeDutyCycle(dutyCycle)
+  time.sleep(1.5)
+#end functions
+
+print("starting")
+setup()
+setServoAngle(pan_s,76)
+setServoAngle(tilt_s,90)
+
+confid_rating = int(input("Enter desired confidence rating: "))#input of desired conf rating
+random_conf = 0 # initializing random  confidence variable
+i = 0 #direction identifier
+j = 0 #counter for loop iterations
+#while loop for running through directions
+while j < 1:
+    #setup base position
+    #setServoAngle(pan_s,76)
+    #setServoAngle(tilt_s,90)
+    setServoAngle(pan_s,86)#pan right
+    i = 1
+    random_conf = random.randint(0,100)#random number testing confidence
+    if random_conf > confid_rating:
+        break
+    setServoAngle(pan_s,76)#recenter
+    setServoAngle(tilt_s,80)#tilt down
+    i = 2
+    random_conf = random.randint(0,100)#random number testing confidence
+    if random_conf > confid_rating:
+        break
+    setServoAngle(tilt_s,90)#Recenter
+    setServoAngle(pan_s,66)#pan left
+    i = 3
+    random_conf = random.randint(0,100)#random number testing confidence
+    if random_conf > confid_rating:
+        break
+    setServoAngle(pan_s,76)#recenter
+    setServoAngle(tilt_s,100)#tilt up
+    i = 4
+    random_conf = random.randint(0,100)#random number testing confidence
+    if random_conf > confid_rating:
+        break
+    #Recenter
+    j += 1
+    #break
+if j ==1 :
+    print("Confidence is at maximum: ", confid_rating)
+elif i == 1:
+    print("Pan right increased confidence with a value of: ", random_conf)
+elif i == 2:
+    print("Tilt down increased confidence with a value of: ", random_conf)
+elif i == 3:
+    print("Pan left increased confidecne with a value of: ", random_conf)
+elif i == 4:
+    print("Tilt up increased confidence with a value of: ", random_conf)
+else:
+    print("Max confidence reached")
+
+#pwm = GPIO.PWM(servo, f_pwm)
+#pwm = GPIO.PWM(servo, f_pwm)
+#pwm.stop()
+GPIO.cleanup()
+print("Done")
