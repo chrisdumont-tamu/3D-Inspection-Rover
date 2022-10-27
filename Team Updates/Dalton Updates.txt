@@ -24,3 +24,6 @@ Validated boards. Troubleshoot Pi wifi downloading to get required libraries.
 
 10/20/22
 More integration with ML subsystem. Optimized code for smoother operation and integration
+
+10/27/22
+Integrated with ML system. Gimbal and camera are mounted to mast on rover 
