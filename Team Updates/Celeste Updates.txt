@@ -43,5 +43,6 @@
 
 10/27/2022
 1. Website has way better graphs on it!! It looks alot better!
-2. Testing felipe's uploads for failure next
+2. Would like to add a pie chart as well to show a different view of counts
+3. Testing felipe's uploads for failure next
 
