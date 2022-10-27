@@ -39,4 +39,9 @@
 
 10/20/2022
 1. Will be working this week to perfect website (make more user friendly)
-2. Begin mounting hardware witgh Chris and Dalton
+2. Begin mounting hardware with Chris and Dalton
+
+10/27/2022
+1. Website has way better graphs on it!! It looks alot better!
+2. Testing felipe's uploads for failure next
+
