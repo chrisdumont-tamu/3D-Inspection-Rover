@@ -54,3 +54,11 @@ Update 8 10/27/2022:
   2.1 further tweaking and perfecting needed
 3. Validated improved Navigation code
 4. Began wire management.
+
+Update 9 11/03/2022:
+1. Resoldered gimbal circuit
+2. Pi mount printed and installed
+3. Wire management/routing completed.
+4. Distance sensor code changed so that if one sensor is not working the rover will stop moving and tell the user which sensor is broken
+  4.1 needs implementing
+5. Need to validate navigation controls
