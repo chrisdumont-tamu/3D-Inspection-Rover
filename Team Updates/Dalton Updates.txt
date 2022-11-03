@@ -27,3 +27,6 @@ More integration with ML subsystem. Optimized code for smoother operation and in
 
 10/27/22
 Integrated with ML system. Gimbal and camera are mounted to mast on rover 
+
+11/03/22
+Adjusted rover appearance for cleaner troubleshooting and operation. Started validation
