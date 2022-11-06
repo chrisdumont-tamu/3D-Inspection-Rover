@@ -46,3 +46,6 @@
 2. Would like to add a pie chart as well to show a different view of counts
 3. Testing felipe's uploads for failure next
 
+11/03/2022
+1. Pie chart code is complete but I can't show both graphs at the same time
+2. Eric recommended that I compute two graphs side by side over different times, will try to complete by next lab
