@@ -30,3 +30,6 @@ Integrated with ML system. Gimbal and camera are mounted to mast on rover
 
 11/03/22
 Adjusted rover appearance for cleaner troubleshooting and operation. Started validation
+
+11/10/22
+Helped finish up ML kinks. Ran a full test with tomato. Making bot pretty for demo. Finishing up video and demo prep
