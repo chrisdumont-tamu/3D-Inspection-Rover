@@ -295,7 +295,7 @@ def back_it_up():
     print("Engage Hyper Drive")#start
     tic = int(time.perf_counter())#timer start
     tac = 0.0#total elapsed time initialized
-    while tac < 240.0: #loop to run for 24 seconds
+    while tac < 20.0: #loop to run for 24 seconds
         GPIO.output(11, GPIO.HIGH) #step off
         sleep(delay)
         GPIO.output(11, GPIO.LOW)#step on
