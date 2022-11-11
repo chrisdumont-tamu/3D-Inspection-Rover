@@ -115,25 +115,7 @@ def setServoAngle(servo, angle):
     pwm.ChangeDutyCycle(dutyCycle)
     time.sleep(1.5)
 
-def shawty():
-    print("Engage Hyper Drive")#start
-    tic = int(time.perf_counter())#timer start
-    tac = 0.0#total elapsed time initialized
-    while tac < 5: #loop to run for 24 seconds
-        GPIO.output(11,GPIO.HIGH) #step off
-        sleep(delay)
-        GPIO.output(11, GPIO.LOW)#step on
-        sleep(delay)
-        toc = int(time.perf_counter())#timer end
-        tac = toc - tic #total time elapsed 
-        #print(tac)
-    print(tac)
-    print("That's no moon...")
-    #confid_rating = 75, desired confidence min
-    i = 0 #direction identifier
-    j = 0 #counter for loop iterations
-    #while loop for running through directions
-    #tic = time.perf_counter()
+def starter():
     setServoAngle(pan_s,76)#baseline pan angle
     setServoAngle(tilt_s,90)#baseline tilt angle
     while j < 1:
@@ -208,6 +190,101 @@ def shawty():
         print(f"Default image has tomatoes in view")
         #print(toc-tic)
     else:
+        print("Max confidence reached")  
+        
+def shawty():
+    print("Engage Hyper Drive")#start
+    tic = int(time.perf_counter())#timer start
+    tac = 0.0#total elapsed time initialized
+    while tac < 5: #loop to run for 24 seconds
+        GPIO.output(11,GPIO.HIGH) #step off
+        sleep(delay)
+        GPIO.output(11, GPIO.LOW)#step on
+        sleep(delay)
+        toc = int(time.perf_counter())#timer end
+        tac = toc - tic #total time elapsed 
+        #print(tac)
+    print(tac)
+    print("That's no moon...")
+    #confid_rating = 75, desired confidence min
+    i = 0 #direction identifier
+    j = 0 #counter for loop iterations
+    #while loop for running through directions
+    #tic = time.perf_counter()
+    setServoAngle(pan_s,76)#baseline pan angle
+    setServoAngle(tilt_s,90)#baseline tilt angle
+    while j < 1:
+        #test default image
+        ###take photo and process photo here
+        
+        Tomatoes_in_Image = fmc.Felipe_Main_Camera(pipeline, Aisle_Count, Plant_Number)
+
+        ###
+        
+        i = 5 #dir ID
+        if Tomatoes_in_Image != 0: #random_conf > confid_rating:
+            break
+        #setup base position
+        #setServoAngle(pan_s,76)
+        #setServoAngle(tilt_s,90)
+        #f = open('tilt_up_test.txt')
+        setServoAngle(pan_s,91)#pan right
+        ###take photo and process photo here
+        
+        Tomatoes_in_Image = fmc.Felipe_Main_Camera(pipeline, Aisle_Count, Plant_Number)
+
+        ###
+        i = 1
+        if Tomatoes_in_Image !=0: #random_conf > confid_rating:
+            break
+        setServoAngle(pan_s,76)#recenter
+        #setServoAngle(tilt_s,75)#tilt down
+        ###take photo and process photo here
+        
+        #Tomatoes_in_Image = fmc.Felipe_Main_Camera(pipeline, Aisle_Count, Plant_Number)
+
+        ###
+        #i = 2
+        #if Tomatoes_in_Image !=0: #random_conf > confid_rating:
+            #break
+        setServoAngle(tilt_s,90)#Recenter
+        setServoAngle(pan_s,61)#pan left
+        ###take photo and process photo here
+        
+        Tomatoes_in_Image = fmc.Felipe_Main_Camera(pipeline, Aisle_Count, Plant_Number)
+
+        ###
+        i = 3
+        if Tomatoes_in_Image !=0: #random_conf > confid_rating:
+            break
+        setServoAngle(pan_s,76)#recenter
+        setServoAngle(tilt_s,105)#tilt up
+        ###take photo and process photo here
+        
+        Tomatoes_in_Image = fmc.Felipe_Main_Camera(pipeline, Aisle_Count, Plant_Number)
+
+        ###
+        i = 4
+        if Tomatoes_in_Image !=0: #random_conf > confid_rating:
+            break
+        #Recenter
+        j += 1
+        #break
+    if j ==1 :
+        print(f"No tomatoes in view")
+    elif i == 1:
+        print(f"Pan right has tomatoes in view")
+    elif i == 2:
+        print(f"Tilt down has tomatoes in view")
+    elif i == 3:
+        print(f"Pan left has tomatoes in view")
+    elif i == 4:
+        print(f"Tilt up has tomatoes in view")
+        #print(toc-tic)
+    elif i == 5:
+        print(f"Default image has tomatoes in view")
+        #print(toc-tic)
+    else:
         print("Max confidence reached")
 
 def back_it_up():
@@ -237,6 +314,7 @@ def Main_Dalton():
     GPIO.output(15,GPIO.LOW)#enable turned on
     delay = 0.0000000001 #delay for the created pwm
     GPIO.output(13,GPIO.LOW) #direction chosen: HIGH=CCW, LOW=CW
+    starter()
     while(k<4):
         shawty()
         k+=1
