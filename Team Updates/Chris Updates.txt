@@ -62,3 +62,10 @@ Update 9 11/03/2022:
 4. Distance sensor code changed so that if one sensor is not working the rover will stop moving and tell the user which sensor is broken
   4.1 needs implementing
 5. Need to validate navigation controls
+
+Update 10: 11/10/2022:
+1. Helped felipe get ML working on raspberry pi
+  1.1 worked as expected
+2. Found a large problem with navigation code
+  2.1 began rewriting the whole thing
+3. should be done by next updated, and as a result, completely functioning and validated project before Thanksgiving
