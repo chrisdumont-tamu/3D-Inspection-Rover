@@ -48,7 +48,11 @@
 
 11/03/2022
 1. Pie chart code is complete but I can't show both graphs at the same time
-2. Eric recommended that I compute two graphs side by side over different times, will try to complete by next lab
+2. Choose wether the pie chart or bar graph makes more sense visually for the farmers
 
 11/10/2022
 1. Testing full integration today, starting at the rover ending at the database. If this test passes, we can begin to plan demo.
+2. Need to change the graph from just counting the tomatoes to allocating the volume of each type of tomato and sorting them. This needs to be complete by next lab
+
+11/17/2022
+1. Completed the new graph, testing full integration again
