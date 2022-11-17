@@ -34,7 +34,7 @@ function App() {
           },
           title: {
             display: true,
-            text: 'Tomatoes by Count',
+            text: 'Tomatoes by Volume (mL)',
           },
         },
       };
@@ -44,37 +44,51 @@ function App() {
     datasets: [
         {
         label: 'Green',
-        data: [(tomatoes.filter(tomato => tomato.Stage === "Green")).length],
+        data: [(tomatoes.filter(tomato => tomato.Stage === "green")).reduce((accumulator, object) => {
+          return accumulator + object.Volume;
+        }, 0)],
         backgroundColor: 'rgba(0, 160, 0, 5)',
         },
         {
         label: 'Breaker',
-        data: [(tomatoes.filter(tomato => tomato.Stage === "Breaker")).length],
+        data: [(tomatoes.filter(tomato => tomato.Stage === "breaker")).reduce((accumulator, object) => {
+          return accumulator + object.Volume;
+        },0 )],
         backgroundColor: 'rgba(153, 204, 0, 5)',
         },
         {
         label: 'Turning',
-        data: [(tomatoes.filter(tomato => tomato.Stage === "Turning")).length],
+        data: [(tomatoes.filter(tomato => tomato.Stage === "turning")).reduce((accumulator, object) => {
+          return accumulator + object.Volume;
+        },0 )],
         backgroundColor: 'rgba(255, 179, 102, 5)',
         },
         {
         label: 'Pink',
-        data: [(tomatoes.filter(tomato => tomato.Stage === "Pink")).length],
+        data: [(tomatoes.filter(tomato => tomato.Stage === "pink")).reduce((accumulator, object) => {
+          return accumulator + object.Volume;
+        },0 )],
         backgroundColor: 'rgba(255, 128, 128, 5)',
         },
         {
         label: 'Light Red',
-        data: [(tomatoes.filter(tomato => tomato.Stage === "Light Red")).length],
+        data: [(tomatoes.filter(tomato => tomato.Stage === "light red")).reduce((accumulator, object) => {
+          return accumulator + object.Volume;
+        },0 )],
         backgroundColor: 'rgba(255, 77, 77, 5)',
         },
         {
         label: 'Red',
-        data: [(tomatoes.filter(tomato => tomato.Stage === "Red")).length],
+        data: [(tomatoes.filter(tomato => tomato.Stage === "red")).reduce((accumulator, object) => {
+          return accumulator + object.Volume;
+        },0 )],
         backgroundColor: 'rgba(230, 57, 0, 5)',
         },
         {
         label: 'Deffective',
-        data: [(tomatoes.filter(tomato => tomato.Stage === "Deffective")).length],
+        data: [(tomatoes.filter(tomato => tomato.Stage === "deffective")).reduce((accumulator, object) => {
+          return accumulator + object.Volume;
+        },0 )],
         backgroundColor: 'rgba(77, 0, 0, 5)',
         },
     ],
