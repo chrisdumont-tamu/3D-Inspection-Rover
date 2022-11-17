@@ -69,3 +69,7 @@ Update 10: 11/10/2022:
 2. Found a large problem with navigation code
   2.1 began rewriting the whole thing
 3. should be done by next updated, and as a result, completely functioning and validated project before Thanksgiving
+
+Update 11: 11/17/2022:
+1. Full integration done
+2. tweaking small things now
