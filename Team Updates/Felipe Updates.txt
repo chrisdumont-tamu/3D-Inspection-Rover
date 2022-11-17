@@ -8,6 +8,7 @@
 09/12 *
 - Gain familiarity with Realsense D435 camera operation and functionality
 - Determine method of volume estimation (oval or circular estimation of tomato)
+    - Method Chosen: Use pointcloud and mesh to reconstruct tomato shape and estimate volume from that
 
 09/19
 - Begin ML and Database subsystems integration
@@ -30,3 +31,21 @@
 - Ongoing ML and camera subsystem integration
 - Attempts to install TensorFlow on Raspberry Pi
 - yolov4 model successfully converted to tensorflow lite model
+
+10/24
+- Change in volume estimation methodology needed, too many problems with previous method
+    - New method involves modeling the tomato as an ellipsoid and determining the axes using RealSense D435 camera
+- Successfully installed TensorFlow on Raspberry Pi
+
+10/31
+- Completed volume estimation program with new methodology
+- Volume estimation validation ongoing
+- Overall ML validaiton ongoing
+
+11/07
+- Volume estimatino validation ongoing
+- Overall ML validation ongoing
+
+11/14
+- Final code modificatinos and bug fixing
+- Preparations for demo
