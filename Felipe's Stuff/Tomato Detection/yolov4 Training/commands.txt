@@ -1,0 +1,23 @@
+YOLOv4
+
+Train From Scratch: ./darknet.exe detector train data/image_data.data cfg/yolov4_train.cfg yolov4.conv.137 -dont_show -map
+
+Train After Stop: ./darknet.exe detector train data/image_data.data cfg/yolov4_train.cfg backup/yolov4_train_last.weights -dont_show -map
+
+Test: ./darknet.exe detector test data/image_data.data cfg/yolov4_test.cfg backup/yolov4_train_last.weights data/test_data/'test_.jpg' -thresh 0.3 
+
+To Validate Previous Weights: ./darknet.exe detector map data/image_data.data cfg/yolov4_test.cfg backup/yolov4_train_3000.weights -thresh 0.7
+
+YOLOv4 Tiny
+
+Train From Scratch: ./darknet.exe detector train data/image_data.data cfg/yolov4-tiny-custom.cfg yolov4-tiny.conv.29 -dont_show -map
+
+Train After Stop: ./darknet.exe detector train data/image_data.data cfg/yolov4-tiny-custom.cfg backup/yolov4-tiny-custom_last.weights -dont_show -map
+
+Test: ./darknet.exe detector test data/image_data.data cfg/yolov4-tiny-custom_test.cfg backup/yolov4-tiny-custom_best.weights data/test_data/'test(5).jpg' -thresh 0.3
+
+To Validate Previous Weights: ./darknet.exe detector map data/image_data.data cfg/yolov4-tiny-custom.cfg backup/yolov4-tiny-custom_3000.weights -thresh 0.7
+
+Train Better: 
+	- Set random=1 in the .cfg file
+	- Increase network resolutino in .cfg file (height=608, width=608, or any multiple of 2)
