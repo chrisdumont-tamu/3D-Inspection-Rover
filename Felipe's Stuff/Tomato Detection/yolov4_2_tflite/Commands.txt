@@ -1,0 +1,9 @@
+Note: Make sure the directories are not too long or an error may occur. To resolve error try
+reducing the directory by reducing name size of folders and moving the folders closer to the main/home drive
+
+- Save yolov4 weights as TensorFlow model:
+	python save_model.py --output ./checkpoints/yolov4-tiny-416 --input_size 416 --model yolov4 --framework tflite --tiny
+
+- Convert yolov4-tiny sensorflow model into tflite model:
+	python convert_tflite.py --weights ./checkpoints/yolov4-tiny-416 --output ./checkpoints/yolov4-tiny-416.tflite
+	
