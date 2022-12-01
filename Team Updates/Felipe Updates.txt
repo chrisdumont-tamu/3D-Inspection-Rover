@@ -48,4 +48,5 @@
 
 11/14
 - Final code modificatinos and bug fixing
+- Final validation
 - Preparations for demo
