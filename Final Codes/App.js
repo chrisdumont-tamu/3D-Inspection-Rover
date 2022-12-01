@@ -1,36 +1,36 @@
 import './App.css'; //creates the App.cs file
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'; //import usestate and useeffect
 //import Histogram from "react-chart-histogram";
 import { 
     Chart as ChartJS, //import chart library to make bar chart
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend,
+    CategoryScale,  //This sets to the default scales
+    LinearScale, //This sets to the default scales
+    BarElement, //This sets the Bar chart's element
+    Title, // Here we define text to draw at the top of the chart
+    Tooltip, //Tooltip engulfs text alignment, intersection, position, background color, etc.
+    Legend,//Legend will allow us to separate the days from each other later
   } 
 
-from 'chart.js';
+from 'chart.js'; 
 import { Bar } from 'react-chartjs-2'; //imports bar graph from package
   
-  ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend
+  ChartJS.register( 
+    CategoryScale, //This sets to the default scales
+    LinearScale, //This sets to the default scales
+    BarElement, //This sets the Bar chart's element
+    Title, // Here we define text to draw at the top of the chart
+    Tooltip, //Tooltip engulfs text alignment, intersection, position, background color, etc.
+    Legend //Legend will allow us to separate the days from each other later
   );
 
 function App() {
     const [tomatoes, setTomatoes] = useState([]);
     const labels = ['green', 'breaker', 'turning', 'pink', 'light red', 'red', 'defective']; //these are the labels for the x-axis sprted by tomato stage
-    const options = {
-        responsive: true,
+    const options = { //set options for bar chart
+        responsive: true, //enable responsiveness
         plugins: {
-          legend: {
-            position: 'top',
+          legend: { 
+            position: 'top', //adjust location of the legend to the top
           },
           title: {
             display: true,
@@ -105,23 +105,23 @@ function App() {
 
     //const options = {fillColor: '#F93208', strokeColor: '#F93208'};
     const fetchData = () => {
-        fetch("https://cnpu0bqb4i.execute-api.us-east-1.amazonaws.com/beta/items")
+        fetch("https://cnpu0bqb4i.execute-api.us-east-1.amazonaws.com/beta/items") //fetching the api gateway 
             .then(response => {
-                return response.json()
+                return response.json() //parses JSON response into native JavaScript objects
             })
             .then(data => {
-                setTomatoes(data.Items)
+                setTomatoes(data.Items) //sets tomato as the data read in from database
             })
     }
 
 
-    useEffect(() => {
-        fetchData()
+    useEffect(() => { //define useeffect hook
+        fetchData() //pulls data 
       }, [])
 
-      return (
+      return ( //uses bar chart, able to change options such as configuration choices, like adjusting the legend and enabling responsiveness 
         <>
-            <Bar options={options} data={data} />
+            <Bar options={options} data={data} /> 
         </>
     )
 }
