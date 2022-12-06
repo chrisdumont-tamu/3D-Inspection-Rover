@@ -16,13 +16,13 @@ Project Setup and Running
 
 
 Navigation Code Details:
--All functions and set ups are in the file Chris_Functions
---this code can also be used to test all functionality of the navigation components
--Current set up is for a plant to be 8 feet away
---this can be altered in the beginning of the code where costants are declared
---all distances used by the navigation code are in centimeters
---withing code there is detailed comments in the begging detailing how to plug in all the sensors and driver connection to a raspberry pi 4b
--there is also comments one every functions detailing how it works.
+- All functions and set ups are in the file Chris_Functions
+- this code can also be used to test all functionality of the navigation components
+- Current set up is for a plant to be 8 feet away
+-   this can be altered in the beginning of the code where costants are declared
+- all distances used by the navigation code are in centimeters
+-   withing code there is detailed comments in the begging detailing how to plug in all the sensors and driver connection to a raspberry pi 4b
+- there is also comments one every functions detailing how it works.
 
 Mast and Gimbal Code Details:
 -Has necessary setups within functions for proper running
