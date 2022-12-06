@@ -14,3 +14,18 @@ Project Setup and Running
 - Use the command 'python BLS.py' to begin the run
     - The file 'BLS.py' is the main integration code used
 
+
+
+
+
+
+
+
+Mast and Gimbal Code Details:
+-Has necessary setups within functions for proper running
+-Angle and runtime can be changed for gimbal/mast movement
+-Number of stops per plant can be changed
+-Takes 4 minutes for mast to start from bottom to reach top, divide 240 seconds by the number of stops wanted to determine runtime between stops
+-Make sure the downward movement runtime matches the upward motion runtime
+-Angles are in degrees and time is in seconds
+-Make sure mast driver is conneted to battery
